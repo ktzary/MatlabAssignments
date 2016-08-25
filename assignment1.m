@@ -22,11 +22,11 @@
 
 % 1. Set the url of the matlab documentation to a variable called helpURL
 
-
+helpURL = 'http://www.mathworks.com/help/matlab/index.html':
 
 % 2. What does the command 'clear all' do?
 %
-% Answer: 
+% Answer: It clears the workspace
 %
 
 
