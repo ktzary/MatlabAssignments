@@ -22,7 +22,7 @@
 
 % 1. Set the url of the matlab documentation to a variable called helpURL
 
-helpURL = 'http://www.mathworks.com/help/matlab/index.html':
+helpURL = 'http://www.mathworks.com/help/matlab/index.html';
 
 % 2. What does the command 'clear all' do?
 %
@@ -33,17 +33,17 @@ helpURL = 'http://www.mathworks.com/help/matlab/index.html':
 % 3. What function would you use to take the average of the following
 % numbers [1 7 21 32 67 32453]? Store your answer in a variable called
 % averageAnswer.
-
-
+A = [1 7 21 32 67 32453];
+averageAnswer = mean(A);
 
 % 4. What command would you type to see a list of all installed toolboxes?
 
-
+ver
 
 % 5. What command would return a list of all of the available functions in 
 % the image processing toolbox? 
 
-
+help images
 
 % 6. On the line below figure (line 44), write a command to draw a graph of 
 % x and y. 
@@ -52,7 +52,7 @@ x = linspace(-2*pi,2*pi);
 y = sin(x);
 
 figure
-        %<- command goes here
+    plot(x,y);    %<- command goes here
 
         
 
@@ -60,14 +60,15 @@ figure
 % in a journal article (there are many possible answers to this). 
 
 %
-% Answer: 
+% Answer: var
 %
 
 % 8. What are the 2 major types of loops that MATLAB supports? What is the
 % difference between them?
 
 %
-% Answer: 
+% Answer: for statements: the loop runs for a set number of times
+% while statements: the loop runs as long as the condition remains true
 % 
 
 
@@ -75,7 +76,8 @@ figure
 % an answer. 
 
 %
-% Answer: 
+% Answer: NaN means Not-A-Number, you might get it when performing any
+% arithmetic operation on a non number
 %
 
 
@@ -85,21 +87,28 @@ figure
 % any of the values in A.
 
 A = [1 2 3 2 1 NaN 1 2 3 NaN];
-S = sum(A)
+S = sum(A, 'omitnan');
 
 
 % 11. I used to love playing the game minesweeper. Is there a way that I
 % could play a similar game on Matlab? Write the command that would launch
 % the game if so. 
 
-
+xpbombs
 
 % 12. What happens if you type why and hit enter in the command window?
 % Repeat this a few times and copy your result below (Make sure everything
 % commented out).
 
 %
-% Answer: 
+% Answer: why
+% Some mathematician obeyed a kid.
+% why
+% For the love of Pete.
+% why
+% Some terrified hamster wanted it.
+% why
+% Why not?
 %
 
 
@@ -114,8 +123,13 @@ S = sum(A)
 
 %%% Enter the code for your program below this line
 
-
-
+% user input is requested
+prompt = 'Type "Hello World"';
+%This prompts individual to type "Hello World" as the input
+str = input(prompt, 's');
+%This returns the input as a string of text
+Hello = msgbox(str);
+% this causes a text box to appear with the input 
 
 
 %%%%% When you have completed everything, type the following two commands
