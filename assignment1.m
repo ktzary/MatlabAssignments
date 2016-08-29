@@ -123,13 +123,9 @@ xpbombs
 
 %%% Enter the code for your program below this line
 
-% user input is requested
 prompt = 'Type "Hello World"';
-%This prompts individual to type "Hello World" as the input
 str = input(prompt, 's');
-%This returns the input as a string of text
 Hello = msgbox(str);
-% this causes a text box to appear with the input 
 
 
 %%%%% When you have completed everything, type the following two commands
