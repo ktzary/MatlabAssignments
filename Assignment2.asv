@@ -158,10 +158,16 @@ val30d = max(vec30);
 
 % 31.)
 vec31 = randi([-10,10],3,5);
-val31a = max(vec31);  %this is max for each col
-val31b = max(vec31,[],2);    % this is max for each row
-val31c = max(max(vec31));    % this is max for the entire matrix
+maxcol
+maxrow
+maxmat
 
-%% Chapter 3 Exercises
 
-% Complete Exercises 1, 4, 6, 8, 13
+
+
+
+
+
+
+
+
