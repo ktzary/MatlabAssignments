@@ -158,16 +158,25 @@ val30d = max(vec30);
 
 % 31.)
 vec31 = randi([-10,10],3,5);
-maxcol
-maxrow
-maxmat
+val31a = max(vec31);  %this is max for each col
+val31b = max(vec31,[],2);    % this is max for each row
+val31c = max(max(vec31));    % this is max for the entire matrix
 
+%% Chapter 3 Exercises
 
+% Complete Exercises 1, 4, 6, 8, 13
 
+% 1.)  this problem is to find the volume of a hollow sphere using any unit of
+% measurement
+inrad = 3;
+% inrad is the inner radius of the sphere
+outrad = 4;
+% outrad is the outer radius of the sphere
+sphvol = ((4*pi)/3)*(outrad^3 - inrad^3);
+% sphvol is the volume of the hollow sphere
 
+% 4.) this problem is to allow a user to input a matrix when prompted
+mat4 = input('Enter a matrix:');
 
-
-
-
-
-
+% 6.) This problem is to demonstrate usage of the fprintf function
+Ques6a = fprintf('The int is %d', 12345.6789);

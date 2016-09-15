@@ -96,7 +96,7 @@ vec1b = 1.1000:.2000:1.7000;
 vec1c = 8:-2:2;
 
 % 2.)
-vec = linspace(0,2*pi,50);
+vec2 = linspace(0,2*pi,50);
 
 % 3.)
 vec3 = linspace(2,3,6);
@@ -165,3 +165,34 @@ val31c = max(max(vec31));    % this is max for the entire matrix
 %% Chapter 3 Exercises
 
 % Complete Exercises 1, 4, 6, 8, 13
+
+% 1.)  This findsthe volume of a hollow sphere using any unit of measurement
+inrad = 3;
+% inrad is the inner radius of the sphere
+outrad = 4;
+% outrad is the outer radius of the sphere
+sphvol = ((4*pi)/3)*(outrad^3 - inrad^3);
+% sphvol is the volume of the hollow sphere
+
+% 4.) This allows a user to input a matrix when prompted
+mat4 = input('Enter a matrix:');
+
+% 6.) This demonstrates usage of the fprintf function
+Ques6a = fprintf('%f\n', 12345.6789);
+Ques6b = fprintf('%10.4f\n', 12345.6789);
+Ques6c = fprintf('%10.2f\n', 12345.6789);
+Ques6d = fprintf('%6.4f\n', 12345.6789);
+Ques6e = fprintf('%2.4f\n', 12345.6789);
+
+% 8.) This is a formula to calculate flowrate in cubic feet
+% per second when inputed as cubic meters per second
+flowm = input('Enter the flow in m^3/s:'); 
+flowf = flowm/.028;  %This converts the flow rate in cubic meters to cubic feet
+fprintf('A flow rate of %2.3f meters per sec\nis equivalent to %3.3f feet per sec \n',flowm,flowf);
+
+% 13.) This calculates a unit vector in three dimensional space
+x = input('What is the x value:');
+y = input('What is the y value:');
+z = input('What is the z value:');
+uvec = [x,y,z]./ sqrt(x.^2 + y.^2 + z.^2);
+% uvec gives the unit vector
