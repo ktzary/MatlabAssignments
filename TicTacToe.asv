@@ -23,7 +23,7 @@ if GoTime == 0;
     disp('Then why did you wake me up?');
 end
 i = 1; % This counter is in place for break statement
-j = 0; 
+j = 1; 
 while GoTime == 1;
 
 % GB is the gameboard, set up as a cell array
@@ -813,10 +813,10 @@ switch(UserMove1);  % User's first move, starts a series of nested moves
           end
 end
 j = j + 1;
-for j = 10;
-    disp('Maybe you should take a break');
-    break
+for j = 2;
+    disp('The match goes to me');
 end
+j = 1;
 % This bit of code allows the users to either opt into playing again or opt
 % out and leave the game
 PlayAgain = input('Want to try again?','s');
