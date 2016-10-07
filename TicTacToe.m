@@ -24,6 +24,7 @@ if GoTime == 0;
 end
 i = 1; % This counter is in place for break statement
 j = 0; 
+k = 0;
 while GoTime == 1;
 
 % GB is the gameboard, set up as a cell array
@@ -318,7 +319,7 @@ switch(UserMove1);  % User's first move, starts a series of nested moves
             case '9'
                 GB{3,3} = 'O';
                 disp(GB);
-                GB{1.3} = 'X'; % Computer Move
+                GB{1,3} = 'X'; % Computer Move
                 disp(GB);
                 disp(CompWin);
             otherwise
@@ -813,9 +814,13 @@ switch(UserMove1);  % User's first move, starts a series of nested moves
           end
 end
 j = j + 1;
-for j = 10;
-    disp('Maybe you should take a break');
-    break
+k = k + 1;
+for j = 2:50;
+    if k == 50; % This tells users to take a break after 50 games
+    disp('Maybe you should take a break, but I am just a machine');
+        j = 1;
+        k = 1;
+    end
 end
 % This bit of code allows the users to either opt into playing again or opt
 % out and leave the game
