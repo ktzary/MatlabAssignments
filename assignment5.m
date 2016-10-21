@@ -8,6 +8,10 @@
 % The purpose of this code is to
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+close all
+% Now the script can run with no other variables or files being accessed on
+% accident
+
 % This imports the file and sets the variables as column vectors
 filename = 'C:\Users\Kelsey\Documents\Matlab Course\isok_data_6803.csv';
 [SubjectID,Age,Gender,Weight,Day1,Day2,Day3] = importfile(filename, 2, inf);
@@ -24,9 +28,15 @@ filename = 'C:\Users\Kelsey\Documents\Matlab Course\isok_data_6803.csv';
 % Function to find the normalized group data for each day based on weight
 [normDay1mean, normDay2mean, normDay3mean] = normalizeIsoCalc( Weight, Day1, Day2, Day3);
 
-fileID = fopen('iso_results.csv', 'w');
-fprintf(fileID, '%1s %11s %21s %31s %41s %51s %61s\n', 'SubjectID', 'Age', 'Gender', 'Weight', 'Day1', 'Day2', 'Day3');
-fprintf(fileID, 
+% This fills in the rest of the column vectors with zero so it can be
+% included in the table with the others
+maleGroupIsoMean(2:25,1) = 0;
+femaleGroupIsoMean(2:25,1) = 0;
+normDay1mean(2:25,1) = 0;
+normDay2mean(2:25,1) = 0;
+normDay3mean(2:25,1) = 0;
 
-
-
+% This puts all the calculated/variable data in one table and exports it as
+% a csv
+AllData = table(SubjectID, Age, Gender, Weight, Day1, Day2, Day3, maleIsoIndMeans, femaleIsoIndMeans, maleGroupIsoMean, femaleGroupIsoMean, day1toDay2, day2toDay3, normDay1mean, normDay2mean, normDay3mean);
+writetable(AllData, 'iso_results.csv');
